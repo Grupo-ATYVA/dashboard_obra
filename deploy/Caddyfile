@@ -1,0 +1,15 @@
+{
+	email {$ACME_EMAIL}
+}
+
+{$DASH_DOMAIN} {
+	encode zstd gzip
+
+	# upload de modelos grandes (NWD/IFC) no painel
+	request_body {
+		max_size 2GB
+	}
+
+	# o release.sh escreve aqui qual versão (blue/green) está ativa
+	import /etc/caddy/dyn/*.caddy
+}

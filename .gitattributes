@@ -1,0 +1,9 @@
+# Arquivos que rodam no Linux precisam de quebra de linha LF
+*.sh text eol=lf
+Dockerfile text eol=lf
+.dockerignore text eol=lf
+Caddyfile text eol=lf
+*.yml text eol=lf
+*.example text eol=lf
+requirements.txt text eol=lf
+gunicorn.conf.py text eol=lf

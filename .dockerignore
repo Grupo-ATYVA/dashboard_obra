@@ -1,0 +1,35 @@
+# dados e segredos NUNCA entram na imagem (ficam no volume do servidor)
+dados/
+logs/
+.env
+*.env
+.claude/
+.git/
+
+# coisas só do Windows / do dia a dia local
+tools/
+deploy/
+sharepoint_publicar/
+modelos/
+*.bat
+*.ps1
+*.vbs
+desktop.ini
+.bat_debug_log.txt
+.server_log.txt
+LINK_MOBILE_ATUAL.txt
+ABRIR_*
+INSTALAR_*
+
+# artefatos de teste/depuração (static/*.png — logos — precisam ENTRAR na imagem)
+__pycache__/
+*.pyc
+bi_test*.png
+tmp_*
+tmp_pdf_ref/
+bi_dom.html
+_*.xml
+*_err.txt
+.melius_collection.json
+.melius_postman.html
+Estoque_Almoxarifado.xlsx

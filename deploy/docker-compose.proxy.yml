@@ -1,0 +1,31 @@
+# Proxy HTTPS fixo (Caddy). Sobe UMA vez e fica no ar para sempre; quem troca a cada
+# atualização é só o container do painel (deploy/release.sh), que o Caddy encontra
+# pela rede "dashnet" — por isso o painel não cai durante uma atualização.
+#
+# Uso (em /opt/dashboard):  docker compose --env-file .env -f docker-compose.proxy.yml up -d
+services:
+  caddy:
+    image: caddy:2
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DASH_DOMAIN: ${DASH_DOMAIN}
+      ACME_EMAIL: ${ACME_EMAIL}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./state/caddy:/etc/caddy/dyn
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - dashnet
+
+networks:
+  dashnet:
+    name: dashnet
+
+volumes:
+  caddy_data:
+  caddy_config:

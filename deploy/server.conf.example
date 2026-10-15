@@ -1,0 +1,8 @@
+# Copie este arquivo para deploy\server.conf e preencha (o server.conf nao vai pro servidor).
+HOST=203.0.113.10
+USER=root
+PORT=22
+KEY=C:\Users\SEU_USUARIO\.ssh\id_ed25519
+REMOTE_ROOT=/opt/dashboard
+# endereco publico (so pra o resumo final)
+URL=https://painel.seudominio.com.br

@@ -1,0 +1,8 @@
+# Tarefas agendadas no SERVIDOR (substituem o Agendador de Tarefas do Windows).
+# Instalar:  crontab -e   e colar as linhas abaixo (o fuso do servidor é America/Sao_Paulo).
+
+# Robô da Carta Convite — seg a sex, 07:30 (igual ao agendamento antigo do Windows)
+30 7 * * 1-5  /opt/dashboard/run-in-active.sh python carta_convite.py >> /opt/dashboard/logs/cron_carta.log 2>&1
+
+# Backup da pasta dados — todo dia às 02:30
+30 2 * * *    /opt/dashboard/backup.sh >> /opt/dashboard/logs/cron_backup.log 2>&1

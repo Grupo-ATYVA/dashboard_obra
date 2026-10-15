@@ -1,0 +1,57 @@
+# Dados da obra (planilhas, credores, atas) — ficam só no SharePoint/servidor,
+# nunca em um repositório git. A pasta tem ~1,5 GB e inclui informação financeira.
+dados/
+
+# Logs e cache local
+logs/
+__pycache__/
+*.pyc
+*.log
+
+# Artefatos temporários de sessão/depuração
+tmp_*
+*_err.txt
+bi_test*.png
+
+# Segredos e ambiente local
+.env
+*.env
+config_local.py
+
+# Editor/SO
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+
+# --- Producao: nunca versionar ---
+# configuracao local do Claude Code (ja continha senhas em texto puro)
+.claude/
+# binarios, exportacoes financeiras e dumps de API de terceiros
+tools/
+auditoria/
+modelos/
+sharepoint_publicar/
+.melius_*
+_*.xml
+bi_dom.html
+*.xlsx
+*.xls
+*.nwd
+*.nwc
+*.pfx
+*.p12
+*.tgz
+*.txt.bak
+# logs soltos e estado local
+.server_log.txt
+.bat_debug_log.txt
+LINK_MOBILE_ATUAL.txt
+.dashboard_secret
+access_users.json
+# acesso ao servidor (chaves e destino de deploy)
+deploy/server.conf
+deploy/servidor.env
+*.pem
+id_*
+
