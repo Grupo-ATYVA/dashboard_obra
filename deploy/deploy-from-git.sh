@@ -54,6 +54,7 @@ for n in release.sh rollback.sh run-in-active.sh backup.sh deploy-from-git.sh cr
 done
 chmod +x "$ROOT"/*.sh
 find "$DEST" -name '*.py' -exec python3 -I -m py_compile {} + 2>/dev/null || { echo "Erro de sintaxe Python na release."; rm -rf "$DEST"; exit 1; }
+find "$DEST" -name __pycache__ -prune -exec rm -rf {} +
 
 if [ "$SO_PREPARAR" = 1 ]; then
   echo "Modo --so-preparar: release pronta em $DEST (nada foi construido nem trocado)."
